@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "mgbl",
+    title: "Ảo Thuật Bảo Lam",
     htmlAttrs: {
       lang: "en",
     },

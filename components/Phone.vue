@@ -1,15 +1,30 @@
 <template>
   <div class="social-buttons">
-    <a href="https://www.facebook.com/aothuatgiabaolam" target="_blank" rel="noopener noreferrer" class="social-button facebook">
+    <a
+      href="https://www.facebook.com/aothuatgiabaolam"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-button facebook"
+    >
       <i class="fab fa-facebook-f"></i>
     </a>
-    <a href="https://zalo.me/123456789" target="_blank" rel="noopener noreferrer" class="social-button zalo">
-      <i class="fab fa-zalo"></i>
+    <a
+      href="https://zalo.me/123456789"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-button zalo"
+    >
+      <span :style="{ fontSize: '16px' }">Zalo</span>
     </a>
     <a href="tel:0868354016" class="social-button phone">
       <i class="fas fa-phone-alt"></i>
     </a>
-    <a href="https://www.youtube.com/channel/UCRmUOI0GRUfnLY1hwb2jF3w" target="_blank" rel="noopener noreferrer" class="social-button youtube">
+    <a
+      href="https://www.youtube.com/channel/UCRmUOI0GRUfnLY1hwb2jF3w"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-button youtube"
+    >
       <i class="fab fa-youtube"></i>
     </a>
   </div>
@@ -17,7 +32,7 @@
 
 <script>
 export default {
-  name: 'SocialButtons'
+  name: "SocialButtons",
 };
 </script>
 
@@ -49,7 +64,7 @@ export default {
   overflow: hidden;
   animation: rippleAnimation 1s infinite;
   transform: scale 0.3s;
-  &:hover{
+  &:hover {
     scale: 1.1;
   }
 }

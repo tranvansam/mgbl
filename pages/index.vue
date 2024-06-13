@@ -18,7 +18,12 @@
 
           <!-- Logo -->
           <a href="#">
-            <img class="logo" src="~/assets/img/logo.svg" style="width:100px" alt="Besnik." />
+            <img
+              class="logo"
+              src="~/assets/img/logo.svg"
+              style="width: 100px"
+              alt="Besnik."
+            />
           </a>
 
           <!-- Navigation -->
@@ -60,7 +65,7 @@
       <div class="menu-drawer">
         <!-- Logo -->
         <a href="#">
-          <img src="~/assets/img/logo.svg"  style="width:100px"  alt="Besnik." />
+          <img src="~/assets/img/logo.svg" style="width: 100px" alt="Besnik." />
         </a>
 
         <!-- Navigation -->
@@ -68,43 +73,7 @@
       </div>
     </header>
     <main>
-      <!-- Giới thiệu -->
-      <div class="hero-wrap">
-        <div class="content">
-          <div class="info">
-            <p class="sub-title">Ảo thuật gia</p>
-            <h1 class="title">Bảo Lam</h1>
-            <p class="desc">
-              Xin chào! Tôi là Bảo Lam, một ảo thuật gia với nhiều năm kinh
-              nghiệm trong lĩnh vực biểu diễn ảo thuật. Tôi đã trải qua nhiều
-              sân khấu và sự kiện khác nhau, từ các buổi biểu diễn nhỏ tới các
-              sự kiện lớn hơn. Sự đam mê và tinh thần sáng tạo của tôi luôn được
-              thể hiện qua mỗi màn trình diễn, và tôi luôn muốn mang lại trải
-              nghiệm độc đáo và thú vị cho khán giả của mình. Hãy để tôi mang
-              đến những phút giây kỳ diệu và góp phần làm cho sự kiện của bạn
-              trở nên đặc biệt hơn
-            </p>
-            <a href="#!" class="btn hero-cta">Xem thêm</a>
-          </div>
-          <div class="hero-img">
-            <iframe
-              class="hero-img"
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/IAUFsrZR1ks?si=tbxpSoJgPqELYp05"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <!-- <img
-            src="~/assets/img/bl-dl.jpg"
-            alt="Discover a place you'll love to live."
-          /> -->
-        </div>
-      </div>
+      <Intro :windowWidth="windowWidth"/>
       <Evaluate />
       <Info />
       <Posts />
@@ -231,7 +200,12 @@
           </div>
         </div>
         <div class="row row-bottom">
-          <img src="~/assets/img/logo.svg"  style="width:100px"  alt="Besnik." class="logo" />
+          <img
+            src="~/assets/img/logo.svg"
+            style="width: 100px"
+            alt="Besnik."
+            class="logo"
+          />
           <p class="copyright">Copyright 2020.com, All rights reserved.</p>
         </div>
       </div>
@@ -245,12 +219,30 @@ import Service from "../components/Service.vue";
 export default {
   components: { Service, Phone },
   name: "IndexPage",
+  data() {
+    return {
+      windowWidth: null,
+      keyVideo: +new Date(),
+    };
+  },
   mounted() {
     const pcNav = document.querySelector("#pc-nav");
     const mobileNav = document.querySelector("#mobile-nav");
 
     // Copy from PC nav -> Mobile nav
     mobileNav.innerHTML = pcNav.innerHTML;
+    window.addEventListener("resize", this.updateWindowSize);
+  },
+  watch: {
+    windowWidth(value) {
+      console.log("new", value);
+      this.keyVideo = +new Date();
+    },
+  },
+  methods: {
+    updateWindowSize() {
+      this.windowWidth = window.innerWidth;
+    },
   },
 };
 </script>

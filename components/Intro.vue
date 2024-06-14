@@ -17,7 +17,6 @@
       </div>
       <div class="hero-img-wrap">
         <iframe
-          :key="'hero-img' + keyVideo"
           class="hero-img"
           :width="withVideo"
           :height="heightVideo"
@@ -51,13 +50,10 @@ export default {
   watch: {
     windowWidth: {
       handler(value) {
-        console.log(value);
         if (value < 450) {
           this.withVideo = "340";
-          this.keyVideo = +new Date();
         } else if (value < 600) {
           this.withVideo = "400";
-          this.keyVideo = +new Date();
         } else {
           this.withVideo = "560";
         }

@@ -15,8 +15,9 @@
         </p>
         <a href="#!" class="btn hero-cta">Xem thêm</a>
       </div>
-      <div class="hero-img-wrap" :key="'hero-img' + keyVideo">
+      <div class="hero-img-wrap">
         <iframe
+          :key="'hero-img' + keyVideo"
           class="hero-img"
           :width="withVideo"
           :height="heightVideo"

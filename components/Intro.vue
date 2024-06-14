@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      withVideo: "560",
+      withVideo: "340",
       heightVideo: "315",
       keyVideo: +new Date(),
     };
